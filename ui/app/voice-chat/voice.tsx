@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
+const WS_PORT = "localhost:8080";
+
 /* ---------- helpers (unchanged logic) ---------- */
 function floatTo16BitPCM(float32Array: Float32Array) {
   const l = float32Array.length;
@@ -107,10 +109,7 @@ export default function VoiceChatWorklet() {
   function connect() {
     if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) return;
     const url =
-      (location.protocol === "https:" ? "wss" : "ws") +
-      "://" +
-      "localhost:8080" +
-      "/ws";
+      (location.protocol === "https:" ? "wss" : "ws") + "://" + WS_PORT + "/ws";
     const ws = new WebSocket(url);
     ws.onopen = () => {
       setConnected(true);

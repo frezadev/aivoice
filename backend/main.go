@@ -13,6 +13,7 @@ import (
 
 var (
 	openaiApiKey      string
+	serverPort        string
 	openaiRealtimeURL = "wss://api.openai.com/v1/realtime?model=gpt-realtime"
 	upgrader          = websocket.Upgrader{CheckOrigin: func(r *http.Request) bool { return true }}
 	pingInterval      = 20 * time.Second
@@ -126,7 +127,8 @@ func handleWebsocketProxy(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	addr := flag.String("addr", ":8080", "http listen address")
+	serverPort = getEnv("SERVER_PORT")
+	addr := flag.String("addr", ":"+serverPort, "http listen address")
 	openaiApiKey = getEnv("OPENAI_API_KEY")
 
 	if openaiApiKey == "" {
