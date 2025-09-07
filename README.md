@@ -1,4 +1,4 @@
-# aivoice Realtime (React + Golang + OpenAI)
+# aivoice (React + Golang + OpenAI)
 
 This project creates a ChatGPT Voice–like application:
 - **Frontend**: React + TypeScript (TSX), using AudioWorklet to capture microphone input, waveform visualization (mic & output), and playback of audio responses from OpenAI.
