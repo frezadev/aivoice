@@ -25,7 +25,7 @@ project-root/
 │ ├── main.go # WebSocket proxy server to OpenAI
 │ └── go.mod
 |
-├── consoleApp/
+├── consoleApp/ #console app to transcript audio file and process it into openapi
 | └── withReadFile/
 |     ├── audios/ # audio files that need to transcript to openai
 |     └── main.go # main go to run
