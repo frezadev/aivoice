@@ -1,20 +1,6 @@
 # aivoice (React + Golang + OpenAI)
 
 This project creates a ChatGPT Voice–like application:
-- **Frontend**: React + TypeScript (TSX), using AudioWorklet to capture microphone input, waveform visualization (mic & output), and playback of audio responses from OpenAI.
-- **Backend**: Golang, as a WebSocket proxy between the client and OpenAI Realtime API.
-- **OpenAI Realtime API**: provides two-way conversation (voice-in + voice-out).
-
----
-
-## Features
-- Capture microphone audio, downsample to 16kHz PCM16.
-- Send audio chunks to the backend via WebSocket.
-- Backend proxies to OpenAI Realtime (commit + response.create).
-- Playback audio responses from OpenAI with circular waveform visualization (mic: yellow, output: green).
-- Display chat logs (text transcripts).
-
----
 
 ## Project Structure
 ```
@@ -81,6 +67,21 @@ This is the console application that will listen your voice and give a response
 6. Type `exit` to exit the console app 
 
 ## Web Based
+
+- **Frontend**: React + TypeScript (TSX), using AudioWorklet to capture microphone input, waveform visualization (mic & output), and playback of audio responses from OpenAI.
+- **Backend**: Golang, as a WebSocket proxy between the client and OpenAI Realtime API.
+- **OpenAI Realtime API**: provides two-way conversation (voice-in + voice-out).
+
+---
+
+## Features
+- Capture microphone audio, downsample to 16kHz PCM16.
+- Send audio chunks to the backend via WebSocket.
+- Backend proxies to OpenAI Realtime (commit + response.create).
+- Playback audio responses from OpenAI with circular waveform visualization (mic: yellow, output: green).
+- Display chat logs (text transcripts).
+
+---
 
 ### 1. Run Backend (Golang)
 Make sure you have Go 1.22+ installed and your `OPENAI_API_KEY` is set inside config.env file
