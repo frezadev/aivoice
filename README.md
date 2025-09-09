@@ -29,7 +29,8 @@ project-root/
 | └── withReadFile/
 |     ├── audios/ # audio files that need to transcript to openai
 |     └── main.go # main go to run
-| └── withReadFile/ #tbd
+| └── withRecordingFunction/ 
+|     └── main.go # main go to run
 |
 ├── frontend/
 │ ├── src/
@@ -45,7 +46,41 @@ project-root/
 
 ---
 
-## Getting Started
+## First thing To Do
+You need to create `config.env` file inside the main folder, this file should have:
+```
+OPENAI_API_KEY=sk-proj-....
+SERVER_PORT=8080
+```
+
+## Console Apps
+
+### withReadFile
+This is the console application that will read an audio file, and give response based on the audio file transcription
+1. Place the audio file under /consoleApp/withReadFile/audios
+2. Change this line of code under `voiceRequest` function `audioFile := "./audios/audio_name"`
+3. Run main.go
+
+### withRecordingFunction
+This is the console application that will listen your voice and give a response
+1. Instal this library:
+   Mac OS:
+   ```
+   brew install pkg-config
+   brew install portaudio
+   ````
+
+   Linux:
+   ```
+   apt-get install portaudio19-dev
+   ````
+   
+3. Run main.go
+4. Type start to talk
+5. Type stop to get the response
+6. Type exit to exit the console app 
+
+## Web Based
 
 ### 1. Run Backend (Golang)
 Make sure you have Go 1.22+ installed and your `OPENAI_API_KEY` is set inside config.env file
