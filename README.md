@@ -57,7 +57,7 @@ SERVER_PORT=8080
 
 ### withReadFile
 This is the console application that will read an audio file, and give response based on the audio file transcription
-1. Place the audio file under /consoleApp/withReadFile/audios
+1. Place the audio file under `/consoleApp/withReadFile/audios`
 2. Change this line of code under `voiceRequest` function `audioFile := "./audios/audio_name"`
 3. Run main.go
 
@@ -76,9 +76,9 @@ This is the console application that will listen your voice and give a response
    ````
    
 3. Run main.go
-4. Type start to talk
-5. Type stop to get the response
-6. Type exit to exit the console app 
+4. Type `start` to talk
+5. Type `stop` to get the response
+6. Type `exit` to exit the console app 
 
 ## Web Based
 
